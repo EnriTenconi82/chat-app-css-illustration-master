@@ -1,0 +1,408 @@
+
+/*
+
+
+#### Gradients
+
+These two colors are the vibrant background colors you see throughout the design and are applied as a linear gradient:
+
+- Light Magenta: hsl(293, 100%, 63%)
+- Light Violet: hsl(264, 100%, 61%)
+
+### Secondary
+
+- White: hsl(0, 0%, 100%)
+- Light Grayish Violet (app background): hsl(270, 20%, 96%)
+- Very Dark Desaturated Violet (submit button background): hsl(271, 36%, 24%)
+- Very Light Magenta (radio button outline): hsl(289, 100%, 72%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 16px
+
+### Font
+
+- Family: [Rubik](https://fonts.google.com/specimen/Rubik)
+- Weights: 400, 500, 700
+
+*/
+:root{
+--col-gradient-light-magenta: hsl(293, 100%, 63%)   ;
+--col-gradient-light-violet: hsl(264, 100%, 61%);
+--color-white:hsl(0, 0%, 100%);
+--col-app-bg-light-grayish-violet: hsl(270, 20%, 96%);
+--col-app-button-bg-very-dark-violet: hsl(271, 36%, 24%);
+--col-radio-button-outline:hsl(289, 100%, 72%);
+--font-size:16px;
+--font-family:'Rubik', sans-serif;
+--col-bg-right: hsla(276, 55%, 96%);
+
+
+}
+
+body{
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    margin: 0 0;
+}
+.main{ 
+
+    position: relative;
+    display:flex;
+    align-items: center;
+    overflow: hidden;
+    min-height: 100vh;
+    background-color: var(--col-app-bg-light-grayish-violet);
+    
+}
+
+
+
+.presentation{
+    width: 380px;
+    grid-column: 2 / 3;
+    z-index: 1;   
+    color:rgba(160, 129, 186, 1);    
+}
+
+
+.presentation h1{color:var(--col-app-button-bg-very-dark-violet);}
+
+
+.main::before{
+    background-image: linear-gradient(40deg,var(--col-gradient-light-violet),var(--col-gradient-light-magenta));
+    border-radius: 0 0 560px 560px;
+    content: '';
+    height: 1000px;
+    width: 570px;
+    position: absolute;
+    right: 50%;
+    top: -450px;
+    left: -150px;
+   
+}
+
+.main::after{
+  
+    background-color: rgb(231, 231, 231);
+    border-radius: 560px 560px 0 0;
+    content: '';
+    width: 570px;
+    height: 100vh;
+    position: absolute;
+    bottom: -140px;
+    right: -260px;
+    
+}
+
+.phone{
+    width:225px; 
+    height:480px ;
+    border-radius: 30px;
+    margin: auto auto;
+    background-color: var(--color-white);
+    overflow: hidden;
+    box-shadow: rgb(0 0 0 / 71%) 0px 8px 24px;
+    position:relative;
+    padding: 10px;
+    z-index: 0;
+   
+}
+
+
+ .phone::before{   
+    background-color: var(--color-white);
+    width: 50%;
+    height: 35px;
+    border-radius:10px ;
+    position:absolute;
+    margin-left: 55px ;
+    margin-top: -20px ;
+    content: " ";
+}
+  .phonePres{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr;
+    align-items: center;
+    column-gap: 100px;
+    margin-left: 30px;
+  }
+
+ .phoneScreen{
+    width:225px; 
+    height:480px ;
+    display: flex;
+    flex-direction: column; 
+ }
+  .chatHead{
+    background-image: linear-gradient(90deg, var(--col-gradient-light-violet),var(--col-gradient-light-magenta));
+    padding-top:25px;
+    width: 100%;
+    height: 45px;
+    display: grid;
+    grid-template-columns: 30px 30px 145px 20px;
+    grid-template-rows:15px 15px;
+    
+    column-gap: 2px;
+    border-radius: 25px 25px 0 0;
+    justify-items: start;
+}
+
+.backBotton::before{
+    content:"<";
+    height: 60px;
+    color:wheat;
+    position:relative;
+    font-size: var(--font-family);
+    grid-area: 1 / 1 / span 2 / span 1 ;
+  
+    margin-left:10px;
+}
+.threebolds::before{
+    content: "\2807";
+    color:wheat;
+    font-size: var(--font-family);
+    grid-area: 1 / 4 / span 2 / span 1;
+ 
+    height: 45px;
+
+}
+
+.chatHead picture img{
+    height:30px;
+    border-radius: 30px;
+    grid-area: 1 / 2 / span 2 / span 1;
+    border-color: antiquewhite;
+    border-width: thin;
+    border-style: solid;
+    margin-top: -5px;
+    text-align: left;
+
+}
+.chatHead article{
+    font-size: .5em;
+    margin-top: -3px;
+    color:rgb(214, 186, 238);
+    grid-area: 2/ 3 / span 1 / span 1;
+    margin-left: 5px;
+    text-align: left;
+    
+}
+
+.chatHead h2{
+  margin-top: -3px;
+  margin-left: 5px;
+  text-align: left; 
+  font-size: .6em;  
+  color: wheat;
+  grid-area: 1 / 3 / span 1 / span 1;
+}
+
+.chat{
+    background-color: var(--col-app-bg-light-grayish-violet);
+    height: 420px;
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    font-size: .6em;
+    
+}
+.leftBubble:first-child{
+    margin-top: 8px;
+}
+.leftBubble{
+ max-width:130px ;
+ margin-left: 8px;
+ background-color: rgba(236, 230, 242, 1);
+ color:rgba(160, 129, 186, 1);
+ align-self: flex-start;
+ border-radius: 10px 10px 10px 0;
+ padding: 8px;
+ 
+ 
+}
+.rightBubble{
+    margin-right: 8px;
+    max-width:130px ;
+    background-color: rgba(236, 230, 242, 1);
+    color:rgba(160, 129, 186, 1);
+    align-self: flex-end;
+    padding: 8px;
+    border-radius: 10px 10px 0 10px;
+}
+.dogPhotos img:last-child{
+    margin-right: 8px;
+}
+.dogPhotos{
+align-self: flex-end;
+ display: flex;
+ flex-direction: row;
+ column-gap: 10px;
+}
+.dogPhotos img{
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+}
+
+.price {
+    margin-left: 8px;
+    background-image: linear-gradient(90deg,var(--col-gradient-light-magenta), var(--col-gradient-light-violet));
+    width: 144px;
+    height: 20px;
+    padding: 8px;
+    border-radius: 10px 10px 10px 0;
+    color:var(--color-white);
+    
+}
+
+.price::before{
+ content: "\25EF";
+
+}
+
+.price article {
+ text-align: left;
+ margin-left: 10px;
+ display: inline-block;
+ width: 90px;
+}
+
+.price span{
+    font-size: 15px;
+    text-align: right;
+}
+
+.input{
+    width: 190px;
+    height: 30px;
+    border-radius: 30px;
+    padding-left: 30px;
+    background-color: var(--color-white);
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    align-items: center;
+    justify-content: space-between;
+    color: gray;
+
+}
+.input img{
+  height: 80%;
+}
+
+.slide-in-fwd-center article{
+	-webkit-animation: slide-in-fwd-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-fwd-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+
+.slide-in-fwd-center article:nth-child(2){
+ -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;	
+}
+
+.slide-in-fwd-center article:nth-child(3){
+    -webkit-animation-delay: 1.5s;
+     animation-delay: 1.5s;	
+   }
+
+   .slide-in-fwd-center article:nth-child(4){
+    -webkit-animation-delay: 2.5s;
+     animation-delay: 2.5s;	
+   }
+
+   .slide-in-fwd-center article:nth-child(5){
+    -webkit-animation-delay: 3s;
+     animation-delay: 3s;	
+   }
+
+   
+   .slide-in-fwd-center article:nth-child(6){
+    -webkit-animation-delay: 4s;
+     animation-delay: 4s;	
+   }
+
+   
+   .slide-in-fwd-center article:nth-child(7){
+    -webkit-animation-delay: 5s;
+     animation-delay: 5s;	
+   }
+   
+   .slide-in-fwd-center article:nth-child(8){
+    -webkit-animation-delay: 5.5s;
+     animation-delay: 5.5s;	
+   }
+
+   
+   .slide-in-fwd-center article:nth-child(9){
+    -webkit-animation-delay: 5.5s;
+     animation-delay: 5.5s;	
+   }
+
+/* ----------------------------------------------
+ * Generated by Animista on 2022-4-12 19:23:49
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation slide-in-fwd-center
+ * ----------------------------------------
+ */
+ @-webkit-keyframes slide-in-fwd-center {
+    0% {
+      -webkit-transform: translateZ(-1400px);
+              transform: translateZ(-1400px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateZ(0);
+              transform: translateZ(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-fwd-center {
+    0% {
+      -webkit-transform: translateZ(-1400px);
+              transform: translateZ(-1400px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateZ(0);
+              transform: translateZ(0);
+      opacity: 1;
+    }
+  }
+  
+
+  @media screen and (max-width: 1000px) {
+    /* STYLES HERE */  
+    .main{
+        padding-top: 100px;
+    }
+    .main::after{
+        display: none;
+    }
+    .phonePres{
+        display: grid;
+        grid-template-columns: 1fr  ;
+        grid-template-rows: 1fr 1fr;
+        align-items: center;
+        row-gap: 80px;  
+        align-items: start;      
+      }
+    .presentation{
+       grid-area: 2 / 1 / 3 / 1; 
+    }
+
+    
+
+}
