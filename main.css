@@ -330,19 +330,13 @@ align-self: flex-end;
 
    
    .slide-in-fwd-center article:nth-child(7){
-    -webkit-animation-delay: 5s;
-     animation-delay: 5s;	
+    -webkit-animation-delay: 4.5s;
+     animation-delay: 4.5s;	
    }
    
    .slide-in-fwd-center article:nth-child(8){
-    -webkit-animation-delay: 5.5s;
-     animation-delay: 5.5s;	
-   }
-
-   
-   .slide-in-fwd-center article:nth-child(9){
-    -webkit-animation-delay: 5.5s;
-     animation-delay: 5.5s;	
+    -webkit-animation-delay: 4.5s;
+     animation-delay: 4.5s;	
    }
 
 /* ----------------------------------------------
